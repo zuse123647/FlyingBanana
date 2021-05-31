@@ -46,7 +46,7 @@ bool flyModeEnable = false;
 bool speedOn = false;
 
 
-float maximumSpeed = 5;
+float maximumSpeed = 2;
 
 UnityEngine::Vector3 inputVector;
 
@@ -79,6 +79,7 @@ MAKE_HOOK_OFFSETLESS(GorillaTagManager_Update, void, GlobalNamespace::GorillaTag
         if(flyModeEnable) {
             flyModeEnable = false;
             playerPhysics->set_velocity(Vector3::get_zero());
+            playerPhysics->set_useGravity(true);
         }
         else if(!flyModeEnable) {
             flyModeEnable = true;
@@ -98,7 +99,9 @@ MAKE_HOOK_OFFSETLESS(GorillaTagManager_Update, void, GlobalNamespace::GorillaTag
 
             playerPhysics->set_velocity(playerPhysics->get_velocity() + newVelocityDir);
 
-
+            if(inputDir.x <= 0.2 && inputDir.y <= 0.2) {
+                playerPhysics->set_velocity(Vector3::get_zero());
+            }
             
             float speed = UnityEngine::Vector3::Magnitude(playerPhysics->get_velocity());
             
