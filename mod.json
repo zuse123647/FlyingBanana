@@ -3,9 +3,10 @@
     "name": "Flying Banana",
     "id": "FlyingBanana",
     "author": "Christoffyw",
-    "version": "0.1.0",
+    "version": "1.1.0",
     "packageId": "com.AnotherAxiom.GorillaTag",
-    "packageVersion": "1.0.7",
+    "packageVersion": "1.0.8",
+    "coverImage": "coverImage.png",
     "modFiles": [
         "libFlyingBanana.so"
     ],
@@ -15,8 +16,8 @@
     "dependencies": [
         {
             "id": "monkecodegen",
-            "version": "^0.4.0",
-            "downloadIfMissing": "https://github.com/RedBrumbler/MonkeCodegen/releases/download/0.4.0/MonkeCodegen.qmod"
+            "version": "^0.5.0",
+            "downloadIfMissing": "https://github.com/RedBrumbler/MonkeCodegen/releases/download/0.5.0/MonkeCodegen.qmod"
         }
     ]
 }

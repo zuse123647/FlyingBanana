@@ -31,11 +31,11 @@ LOCAL_EXPORT_C_INCLUDES := extern/beatsaber-hook
 LOCAL_SRC_FILES := extern/libbeatsaber-hook_1_3_5.so
 LOCAL_CPP_FEATURES += exceptions
 include $(PREBUILT_SHARED_LIBRARY)
-# Creating prebuilt for dependency: monkecodegen - version: 0.4.0
+# Creating prebuilt for dependency: monkecodegen - version: 0.5.0
 include $(CLEAR_VARS)
-LOCAL_MODULE := monkecodegen_0_4_0
+LOCAL_MODULE := monkecodegen_0_5_0
 LOCAL_EXPORT_C_INCLUDES := extern/monkecodegen
-LOCAL_SRC_FILES := extern/libmonkecodegen_0_4_0.so
+LOCAL_SRC_FILES := extern/libmonkecodegen_0_5_0.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -45,9 +45,9 @@ LOCAL_SRC_FILES += $(call rwildcard,extern/beatsaber-hook/src/inline-hook,*.cpp)
 LOCAL_SRC_FILES += $(call rwildcard,extern/beatsaber-hook/src/inline-hook,*.c)
 LOCAL_SHARED_LIBRARIES += modloader
 LOCAL_SHARED_LIBRARIES += beatsaber-hook_1_3_5
-LOCAL_SHARED_LIBRARIES += monkecodegen_0_4_0
+LOCAL_SHARED_LIBRARIES += monkecodegen_0_5_0
 LOCAL_LDLIBS += -llog
-LOCAL_CFLAGS += -I'extern/libil2cpp/il2cpp/libil2cpp' -DID='"FlyingBanana"' -DVERSION='"0.1.0"' -I'./shared' -I'./extern' -isystem'extern/monkecodegen/include'
+LOCAL_CFLAGS += -I'extern/libil2cpp/il2cpp/libil2cpp' -DID='"FlyingBanana"' -DVERSION='"1.1.0"' -I'./shared' -I'./extern' -isystem'extern/monkecodegen/include'
 LOCAL_CPPFLAGS += -std=c++2a
 LOCAL_C_INCLUDES += ./include ./src
 include $(BUILD_SHARED_LIBRARY)
