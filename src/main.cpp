@@ -122,23 +122,7 @@ MAKE_HOOK_OFFSETLESS(GorillaTagManager_Update, void, GlobalNamespace::GorillaTag
 
 MAKE_HOOK_OFFSETLESS(PhotonNetworkController_OnJoinedRoom, void, Il2CppObject* self)
 {
-    PhotonNetworkController_OnJoinedRoom(self);
-
-    Il2CppObject* currentRoom = CRASH_UNLESS(il2cpp_utils::RunMethod("Photon.Pun", "PhotonNetwork", "get_CurrentRoom"));
-
-    if (currentRoom)
-    {
-        // get wether or not this is a private room
-        allowFlyMode = !CRASH_UNLESS(il2cpp_utils::RunMethod<bool>(currentRoom, "get_IsVisible"));
-    }
-    else allowFlyMode = true;
-
-    // ? construction to switch what is logged, logs work like printf in C with the % placeholders
-    getLogger().info("Room Joined! %s", allowFlyMode ? "Room Was Private" : "Room Was not private");
-}
-#include "Photon/Realtime/DisconnectCause.hpp"
-MAKE_HOOK_OFFSETLESS(PhotonNetworkController_OnLeavedRoom, void, Il2CppObject* self, Photon::Realtime::DisconnectCause cause)
-{
+    
     PhotonNetworkController_OnLeavedRoom(self, cause);
     using namespace GorillaLocomotion;
 
